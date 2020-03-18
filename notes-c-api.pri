@@ -26,3 +26,6 @@ win32 {
     LIBS += -L$${NOTES_C_API_PATH}/lib/mswin32
   }
 }
+
+DISTFILES += \
+    $$PWD/profile.pri
