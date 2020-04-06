@@ -1,6 +1,8 @@
 #include "printapierror.hpp"
 
+#ifdef NT
 #pragma pack(push, 1)
+#endif
 
 #include <names.h>
 #include <nsfdb.h>
@@ -8,7 +10,9 @@
 #include <osfile.h>
 #include <lapiplat.h>
 
+#ifdef NT
 #pragma pack(pop)
+#endif
 
 int main(int argc, char *argv[])
 {

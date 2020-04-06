@@ -11,6 +11,12 @@ LIBS += -lnotes
 
 DEFINES += PRODUCTION_VERSION
 
+# Windows以外
+!win32 {
+  DEFINES += HANDLE_IS_32BITS LONGIS64BIT
+  LIBS += -L$${NOTES_EXEC_PATH}
+}
+
 # Windows
 win32 {
   DEFINES += W32 W NT
@@ -25,6 +31,11 @@ win32 {
     DEFINES += _X86_
     LIBS += -L$${NOTES_C_API_PATH}/lib/mswin32
   }
+}
+
+# MacOSX
+else:macx {
+  DEFINES += MAC
 }
 
 DISTFILES += \

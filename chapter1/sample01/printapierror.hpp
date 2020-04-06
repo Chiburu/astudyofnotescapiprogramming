@@ -3,12 +3,16 @@
 
 #include <stdio.h>
 
+#ifdef NT
 #pragma pack(push, 1)
+#endif
 
 #include <global.h>
 #include <osmisc.h>
 
+#ifdef NT
 #pragma pack(pop)
+#endif
 
 inline void PrintAPIError(STATUS api_error)
 
