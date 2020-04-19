@@ -38,5 +38,11 @@ else:macx {
   DEFINES += MAC
 }
 
+# Linux64
+else:unix {
+  DEFINES += W32 W ND64 UNIX LINUX LINUX86 LINUX64 NDUNIX64
+  LIBS += -Wl,-rpath,$${NOTES_EXEC_PATH}
+}
+
 DISTFILES += \
     $$PWD/profile.pri
